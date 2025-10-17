@@ -161,37 +161,6 @@ public class MainActivity extends AppCompatActivity {
         // -------------- Fix Ended for this block(apply cloak as early as
         // possible)-----------
 
-        // ----- Fix Start: Ensure onboarding shows on first install -----
-        // Initialize SharedPreferencesManager instance first
-        this.sharedPreferencesManager = SharedPreferencesManager.getInstance(this);
-
-        // Check if this is a first launch by looking for a special flag
-        boolean firstInstallChecked = sharedPreferencesManager.sharedPreferences
-                .getBoolean(Constants.FIRST_INSTALL_CHECKED_KEY, false);
-
-        if (!firstInstallChecked) {
-            // This is definitely a first install or app data was cleared
-            // Force onboarding to show by setting the flag to false
-            android.util.Log.d("MainActivity", "First install detected! Forcing onboarding to show.");
-            sharedPreferencesManager.sharedPreferences.edit()
-                    .putBoolean(Constants.COMPLETED_ONBOARDING_KEY, false)
-                    .putBoolean(Constants.FIRST_INSTALL_CHECKED_KEY, true)
-                    .commit(); // Use commit() for immediate effect
-        }
-
-        // Check for onboarding BEFORE applying theme or language
-        boolean showOnboarding = sharedPreferencesManager.isShowOnboarding();
-        android.util.Log.d("MainActivity", "Should show onboarding: " + showOnboarding);
-
-        if (showOnboarding) {
-            // Launch onboarding activity if needed
-            Intent intent = new Intent(this, com.fadcam.ui.OnboardingActivity.class);
-            startActivity(intent);
-            finish(); // Finish this activity so it's not in the back stack
-            return;
-        }
-        // ----- Fix End: Ensure onboarding shows on first install -----
-
         // Now that we know we're not showing onboarding, continue with normal
         // initialization
 
@@ -200,15 +169,6 @@ public class MainActivity extends AppCompatActivity {
         String savedLanguageCode = prefs.getString(Constants.LANGUAGE_KEY, Locale.getDefault().getLanguage());
 
         applyLanguage(savedLanguageCode); // Apply the language preference
-
-        // Check if current locale is Pashto
-        if (getResources().getConfiguration().locale.getLanguage().equals("ps")) {
-            getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-        }
-
-        // ----- Fix Start: Remove duplicate onboarding check -----
-        // The onboarding check was already done at the beginning of onCreate
-        // ----- Fix End: Remove duplicate onboarding check -----
 
         setContentView(R.layout.activity_main);
 
