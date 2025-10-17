@@ -6,10 +6,6 @@ public abstract class Constants {
 
     public static final String PREFS_NAME = "app_prefs";
     public static final String LANGUAGE_KEY = "language";
-    public static final String COMPLETED_ONBOARDING_KEY =
-        "pref_completed_onboarding";
-    public static final String FIRST_INSTALL_CHECKED_KEY =
-        "first_install_checked";
 
     public static final String PREF_VIDEO_RESOLUTION_WIDTH =
         "video_resolution_width";
@@ -147,7 +143,7 @@ public abstract class Constants {
     public static final float DEFAULT_ZOOM_RATIO = 1.0f; // Default zoom ratio (no zoom)
     public static final VideoCodec DEFAULT_VIDEO_CODEC = VideoCodec.HEVC;
 
-    public static final String DEFAULT_WATERMARK_OPTION = "timestamp_fadcam";
+    public static final String DEFAULT_WATERMARK_OPTION = "timestamp";
     public static final boolean DEFAULT_PREVIEW_ENABLED = true;
     public static final boolean DEFAULT_RECORD_AUDIO = true;
     public static final int DEFAULT_AUDIO_BITRATE = 192000; // 192 kbps stereo AAC
@@ -269,8 +265,6 @@ public abstract class Constants {
     public static final String APP_ICON_DEFAULT = "default"; // Original icon
     public static final String APP_ICON_ALTERNATIVE = "alternative"; // Detective icon
     public static final String APP_ICON_FADED = "faded"; // Faded icon
-    public static final String APP_ICON_PALESTINE = "palestine"; // Sumud icon
-    public static final String APP_ICON_PAKISTAN = "pakistan"; // MadeInPK icon
     public static final String APP_ICON_FADSECLAB = "fadseclab"; // r00t icon
     public static final String APP_ICON_NOOR = "noor"; // Noor icon
     public static final String APP_ICON_BAT = "bat"; // FadBat icon
