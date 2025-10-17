@@ -20,10 +20,6 @@ public class SharedPreferencesManager {
     public static final String PREF_CUSTOM_STORAGE_URI = "custom_storage_uri";
     // --- END STORAGE CONSTANTS ---
     
-    // --- UPDATE CHECK CONSTANTS ---
-    public static final String PREF_AUTO_UPDATE_CHECK = "auto_update_check_enabled";
-    // --- END UPDATE CHECK CONSTANTS ---
-    
     public static final String PREF_OPENED_VIDEO_URIS = "opened_video_uris"; // Defined in Constants now
 
     private static SharedPreferencesManager instance;
