@@ -163,7 +163,6 @@
 
 # Also keep other essential activities and your Application class
 -keep public class com.fadcam.SplashActivity { *; }
--keep public class com.fadcam.ui.OnboardingActivity { *; }
 -keep public class com.fadcam.FadCamApplication { *; }
 
 # Aggressive optimization settings
